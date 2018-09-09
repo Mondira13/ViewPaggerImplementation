@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ViewPagger</string>
+
+    <string name="viewProfile"> View Profile</string>
+    <string name="editProfile"> Edit Profile </string>
+
+
+</resources>
