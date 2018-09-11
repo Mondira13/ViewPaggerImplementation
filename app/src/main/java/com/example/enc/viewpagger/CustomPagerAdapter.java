@@ -1,50 +1,65 @@
 package com.example.enc.viewpagger;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-public class CustomPagerAdapter extends PagerAdapter {
+public class CustomPagerAdapter extends FragmentStatePagerAdapter {
 
-    private Context mContext;
+    int noOfTabs;
 
-    public CustomPagerAdapter(Context context) {
-        mContext = context;
+    public CustomPagerAdapter(FragmentManager fm, int noOfTabs) {
+        super(fm);
+        this.noOfTabs = noOfTabs;
     }
 
     @Override
-    public Object instantiateItem(ViewGroup collection, int position) {
-        ModelObject modelObject = ModelObject.values()[position];
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        ViewGroup layout = (ViewGroup) inflater.inflate(modelObject.getLayoutResId(), collection, false);
-        collection.addView(layout);
-        return layout;
-    }
+    public Fragment getItem(int i) {
 
-    @Override
-    public void destroyItem(ViewGroup collection, int position, Object view) {
-        collection.removeView((View) view);
+        switch (i) {
+            case 0:
+                FragmentA fragmentA = new FragmentA();
+                return fragmentA;
+            case 1:
+                FragmentB fragmentB = new FragmentB();
+                return fragmentB;
+            case 2:
+                FragmentC fragmentC = new FragmentC();
+                return fragmentC;
+            default:
+                return null;
+
+        }
+
     }
 
     @Override
     public int getCount() {
-        return ModelObject.values().length;
+        return noOfTabs;
     }
-
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        ModelObject customPagerEnum = ModelObject.values()[position];
-        return mContext.getString(customPagerEnum.getTitleResId());
-    }
-
+//
+//    @Nullable
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        switch (position){
+//            case 0:
+//                return "View Profile";
+//            case 1:
+//                return "Edit Profile";
+//            case 2:
+//                return "Contact";
+//                default:
+//                    return null;
+//        }
+//
+//    }
 }
 
 
