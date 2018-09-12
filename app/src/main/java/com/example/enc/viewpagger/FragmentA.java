@@ -73,7 +73,6 @@ public class FragmentA extends BaseFragment {
             }
         });
 
-
     }
 
     @Override
