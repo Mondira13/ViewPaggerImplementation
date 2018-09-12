@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/myColor1"
+   android:id="@+id/fragB"
     tools:context=".FragmentB">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,6 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Edit Profile"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="show here"
         android:textSize="20sp"
         android:gravity="center"
         />

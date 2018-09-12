@@ -4,13 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/myColor2"
+    android:id="@+id/fragC"
     tools:context=".FragmentC">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Contact"
+        android:text="Contact Us"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/resultId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="show here"
         android:textSize="20sp"
         android:gravity="center"
         />
